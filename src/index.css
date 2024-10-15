@@ -27,7 +27,6 @@ body {
   min-height: 100vh;
 }
 
- /*?  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical */
 
 h1 {
   font-size: 5.4rem;
@@ -57,6 +56,44 @@ a {
 li {
   list-style: none;
 }
+/*******toast*/
+/*
+.toastBody{
+  font-family: "Atlas Grotesk Web",Arial, Helvetica, sans-serif;
+  font-size:1.7rem;
+}
+*/
+/* Dashboard.css */
+
+.dashboard-container {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.dashboard-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.dashboard-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-nav li {
+  margin: 10px 0;
+}
+
+.dashboard-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.dashboard-nav a:hover {
+  color: #007bff;
+}
+
 
 /*? layout Rule  */
 
@@ -78,6 +115,78 @@ li {
 .grid-four-cols {
   grid-template-columns: repeat(4, 1fr);
 }
+
+/* PdfPages.css */
+
+.pdf-page-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-page-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pdf-page-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pdf-page-container label {
+  font-weight: bold;
+  color: #555;
+}
+
+.pdf-page-container input[type="file"],
+.pdf-page-container input[type="number"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.pdf-page-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-page-container button:hover {
+  background-color: #0056b3;
+}
+
+.pdf-page-container .error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pdf-page-container .selected-files {
+  margin-top: 20px;
+}
+
+.pdf-page-container .selected-files ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pdf-page-container .selected-files li {
+  background-color: #e9e9e9;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
 
 /*? Module Rules / Reusable */
 button {
@@ -107,6 +216,92 @@ button {
   margin-left: 3.2rem;
 }
 
+/* admin table.css*/
+/* admin table.css*/
+body tr{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(10rem,1fr));
+  align-items:center;
+  box-shadow:0 0.3rem 0 grey;
+  margin-bottom:10px;
+  border-bottom:4px solid transparent;
+  color:var(--bg-color);
+  :last-child{
+    box-shadow:none;
+  }
+}
+td{
+  font-size:1.7rem;
+  letter-spacing:0.1rem;
+  padding:3rem;
+  text-align:center;
+  color:var(--dark-color);
+  width:30rem;
+}
+table {
+  background:white;
+  box-shadow:rgba(255,255,255,0.2) 0px 7px 29px 0px;
+  border-collapse:collapse;
+  border-radius:1rem;
+  -webkit-border-radius:1rem;
+  -moz-border-radius:1rem;
+  -ms-border-radius:1rem;
+  -o-border-radius:1rem;
+}
+
+/*
+.firebase-form{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  height:90vh;
+  width:100%;
+}
+
+
+.full-width{
+  width:100%;
+}*/
+
+/*****************AdminToken***************/
+/* Container styles */
+.container.firebase-form {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Heading styles */
+h1.mb-5 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Form control styles */
+.full-width {
+  width: 100%;
+}
+
+/* Floating label styles */
+.floating-label {
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button.full-width {
+  width: 100%;
+}
+
+/* Toast styles 
+.Toastify__toast-container {
+  z-index: 10000;
+}/*
+
 /***** Hero Section *****/
 
 .section-hero {
@@ -133,7 +328,100 @@ button {
   }
 }
 
-/***** End Hero  *****/
+
+
+/*contact image*/
+.contact-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+} 
+
+/***** End Hero  ****
+
+/* error page  */
+#error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#error-page .content {
+  max-width: 70rem;
+  text-align: center;
+}
+.content h2.header {
+  font-size: 18vw;
+  line-height: 1em;
+  animation: animate 10s ease-in-out infinite;
+  background: -webkit-repeating-linear-gradient(
+    -60deg,
+    #71b7e6,
+    var(--btn-color),
+    #b98acc,
+    #ee8176,
+    #b98acc,
+    var(--btn-color),
+    #9b59b6
+  );
+  background-size: 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+  position: relative;
+  -webkit-animation: animate 10s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.content h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.content .btns {
+  margin: 25px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+.content .btns a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.content .btns a:hover {
+  background: var(--btn-color);
+  color: #fff;
+}
 
 /***** analytics Section *****/
 

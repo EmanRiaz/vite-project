@@ -1,8 +1,10 @@
 //import { Analytics } from "../components/Analytics";
+import { Button } from 'react-bootstrap';
 
 export const Home = () => {
     return (
       <>
+
         <main>
           <section className="section-hero">
             <div className="container grid grid-two-cols">
@@ -44,12 +46,7 @@ export const Home = () => {
               <h1>Start Your Journey with Us</h1>
               <p>Take the first step towards seamless and secure digital editing. Contact us today for a free consultation and explore how EditMasters can transform your document and photo editing experience.</p>
               <div className="btn btn-group">
-                <a href="/contact">
-                  <button className="btn">Connect Now</button>
-                </a>
-                <a href="/services">
-                  <button className="btn secondary-btn">Learn More</button>
-                </a>
+        
               </div>
             </div>
           </div>

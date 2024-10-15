@@ -1,11 +1,22 @@
 import { useState } from "react";
-
+import {useAuth} from "../store/auth";
+const defaultContactFormData={
+  username:"",
+  email:"",
+  message:"",
+};
 export const Contact = () => {
-  const [contact, setContact] = useState({
-    username: "",
-    email: "",
-    message: "",
-  });
+  const [contact, setContact] = useState(defaultContactFormData);
+  const [userData,setUserData]=useState(true);
+  const {user}=useAuth();
+  if(userData && user){
+    setContact({
+      username:user.username,
+      email:user.email,
+      message:"",
+    });
+    setUserData(false);
+  }
 
   // lets tackle our handleInput
   const handleInput = (e) => {
@@ -19,10 +30,28 @@ export const Contact = () => {
   };
 
   // handle fomr getFormSubmissionInfo
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(contact);
+   // console.log(contact);
+   try{
+    const response=await fetch ("http://localhost:5000/api/form/contact",{
+      method:"POST",
+      headers:{
+        'Content-Type':"application/json"
+      },
+      body:JSON.stringify(contact),
+    });
+     if(response.ok){
+      setContact(defaultContactFormData);
+      const data=await response.json();
+      console.log(data);
+      alert("Message send successfully");
+     }
+   }catch(error){
+    alert("Message not send ");
+    console.log(error);
+   }
   };
 
 
@@ -31,19 +60,19 @@ export const Contact = () => {
     <>
       <section className="section-contact">
         <div className="contact-content container">
-          <h1 className="main-heading">contact us</h1>
+          <h1 className="main-heading">Contact Us</h1>
         </div>
         {/* contact page main  */}
         <div className="container grid grid-two-cols">
           <div className="contact-img">
-            <img src="/images/support.png" alt="we are always ready to help" />
+            <img src="/images/support.png" alt="image" />
           </div>
 
           {/* contact form content actual  */}
           <section className="section-form">
             <form onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="username">username</label>
+                <label htmlFor="username">Username</label>
                 <input
                   type="text"
                   name="username"
@@ -56,7 +85,7 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email">email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -69,7 +98,7 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message">message</label>
+                <label htmlFor="message">Message</label>
                 <textarea
                   name="message"
                   id="message"
@@ -83,7 +112,7 @@ export const Contact = () => {
               </div>
 
               <div>
-                <button type="submit">submit</button>
+                <button type="submit">Submit</button>
               </div>
             </form>
           </section>

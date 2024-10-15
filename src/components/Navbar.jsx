@@ -18,17 +18,21 @@ return(
               <li>
                 <NavLink to="/about"> About </NavLink>
               </li>
-              <li>
-                <NavLink to="/service"> Services </NavLink>
-              </li>
+             
               <li>
                 <NavLink to="/contact"> Contact </NavLink>
               </li>
 
-              {isLoggedIn ? (
+              {isLoggedIn ? (<>
+                <li> 
+                   <NavLink to="/dashboard">Dashboard</NavLink>
+
+                </li> 
                 <li>
                   <NavLink to="/logout">Logout</NavLink>
                 </li>
+                </>
+
               ) : (
                 <>
                   <li>
